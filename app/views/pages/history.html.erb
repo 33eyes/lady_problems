@@ -1,0 +1,118 @@
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>  
+</head>
+<body>
+
+<h2>Historical Data</h2>
+<!--span id="date_time"></span>
+    <script type="text/javascript">window.onload = date_time('date_time');</script-->
+
+
+<ul class="tab">
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')">Mood Graph</a></li>
+  <!--li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Paris</a></li-->
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Body Map</a></li>
+</ul>
+
+
+<div id="London" class="tabcontent" style="display:block;">
+  <!--h3>Mood Graph</h3-->
+  <p> </p>
+  <center>
+    <img src="/images/place_holder2.png" 
+    alt="mood graph"  style="width:100%;"
+        
+        id="image1">
+      </center>
+</div>
+
+<!--div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div-->
+
+<div id="Tokyo" class="tabcontent">
+  <!--h3>BodyMap</h3-->
+  
+  <center>
+    <p></p>
+    <p></p>
+    <img src="/images/myBODY.png" 
+      alt="title" 
+        style="width:80%;"
+        id="image1">
+    <p>Red:Pain ; Blue: Cold ; Yellow: Itech</p>
+    <form>
+    <figure>
+    <figcaption>
+      <p>
+        <label>
+          Range
+        </label>
+        <select id = "myList">
+          <option value = "1">today</option>
+          <option value = "2">this week</option>
+          <option value = "3">this month</option>
+          <option value = "4">this quarter</option>
+        </select>
+
+        <label>
+          Time of Day
+        </label>
+        <select id = "myList">
+          <option value = "1">overall</option>
+          <option value = "2">morning</option>
+          <option value = "3">afternoon</option>
+          <option value = "4">evening</option>
+        </select>
+
+        <label>
+          Discomfort
+        </label>
+        <select id = "myList">
+          <option value = "1">all</option>
+          <option value = "2">pain/ache</option>
+          <option value = "3">itch</option>
+          <option value = "4">cold</option>
+        </select>
+      </p>
+    </figcaption>
+
+    <img src="/images/female_body_agg.jpg" 
+    alt="Female Body" 
+        style="width:100%;"
+        id="image1">
+    <!-- </fieldset> -->
+  </form>
+</center>
+</div>
+<p></p>
+<p></p>
+
+<hashtext>
+ Do you know that just like you, 80% of women feels 
+ <a href=" ">#PaininBreast#</a> in their teenage years? 
+</hashtext>
+

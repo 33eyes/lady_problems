@@ -12,24 +12,25 @@
 </head>
 <body>
 
+<div id="bkgd-container">
 <!-- Bootstrap navbar -->
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
         <% if user_signed_in? %>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            
+            <%= link_to root_path, class: 'navbar-brand' do %>
+              <%= image_tag("myTMI_logo_xsmall.png") %>
+            <% end %>
+          </div>
         <% end %>
-        
-        <%= link_to root_path, class: 'navbar-brand' do %>
-          <!-- <%= image_tag("#") %> -->
-        <% end %>
-      </div>
   
       <% if user_signed_in? %>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,7 +46,7 @@
           
       <% else %>
         <div class="nav navbar-nav navbar-right">
-           <%= link_to "Log in", new_user_session_path, class: 'btn btn-success navbar-btn', method: :get %>
+           <%= link_to "Log in", new_user_session_path, class: 'btn btn-success navbar-btn btn-login', method: :get %>
         </div>
       <% end %>
         
@@ -53,13 +54,13 @@
   </nav>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid" id="main-container">
     <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "alert alert-#{key}" %>
     <% end %>
     <%= yield %>
   </div>
   
- 
+ </div>
 </body>
 </html>

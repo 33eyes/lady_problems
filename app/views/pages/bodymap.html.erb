@@ -1,0 +1,76 @@
+	<script>
+   var clicks = 0;
+   function diffImage(img) 
+   {
+     clicks += 1;
+     if(clicks == 1){
+       img.src = "/images/female_body_1.jpg";
+     }if(clicks == 2){
+       img.src = "/images/female_body_2.jpg";
+     }if(clicks == 3){
+       img.src = "/images/female_body_3.jpg";
+     }
+   }
+   function date_time(id)
+   {
+    date = new Date;
+    year = date.getFullYear();
+    month = date.getMonth();
+    months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+    d = date.getDate();
+    day = date.getDay();
+    days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+    h = date.getHours();
+    if(h<10)
+    {
+      h = "0"+h;
+    }
+    m = date.getMinutes();
+    if(m<10)
+    {
+      m = "0"+m;
+    }
+    s = date.getSeconds();
+    if(s<10)
+    {
+      s = "0"+s;
+    }
+    result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+    document.getElementById(id).innerHTML = result;
+    setTimeout('date_time("'+id+'");','1000');
+    return true;
+  }
+
+
+</script>  
+
+
+  
+  
+  <center>
+  <h2>
+    <button class="button button2">
+      PAIN POINT
+    </button>
+    <p>Click on pain area!</p>
+  </h2>
+
+
+    <figure>
+      <img src="/images/female_body.jpg" 
+      alt="Female Body" 
+      style="width:100%; border-radius: 5px;
+    border: 2px solid #894ca7;"
+      id="image1" onclick=diffImage(this)>
+      <figcaption>
+<!--        <span id="date_time"></span>
+        <script type="text/javascript">window.onload = date_time('date_time');</script>
+-->
+
+<!--         <button type="button">History</button> -->
+
+      <button class="button">HISTORY</button>
+
+      </figcaption>
+    </figure>
+  </center>

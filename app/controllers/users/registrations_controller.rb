@@ -1,7 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
    
   def create
-    resource.save
+    super do |resource|
+      resource.save
+    end
   end
   
 
