@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   #devise_for :users, controllers: { registrations: 'users/registrations' }
   
   #root 'users#signup'
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  #root 'users#index'
+  root 'pages#home'
   
   #post "users", to: "users#create"
   

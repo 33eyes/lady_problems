@@ -35,7 +35,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <div class="nav navbar-nav navbar-right">
-            <%= button_to "Sign out", root_path, class: 'btn btn-success navbar-btn' %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-success navbar-btn' %>
           </div>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Community", root_path %></li>
@@ -45,7 +45,7 @@
           
       <% else %>
         <div class="nav navbar-nav navbar-right">
-         <!--  <%= link_to "Log in", root_path, class: 'btn navbar-btn', method: :get %>  -->
+           <%= link_to "Log in", new_user_session_path, class: 'btn btn-success navbar-btn', method: :get %>
         </div>
       <% end %>
         
