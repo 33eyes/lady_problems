@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#signup'
+  #devise_for :users, controllers: { registrations: 'users/registrations' }
   
-  post "users", to: "users#create"
+  #root 'users#signup'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
   
-  get 'users/:id' => 'profile#view'
+  #post "users", to: "users#create"
+  
+  #get 'users/:id' => 'profile#view'
   
   resources :users do
     resources :healthpoints
