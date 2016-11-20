@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120034105) do
+ActiveRecord::Schema.define(version: 20161120053020) do
 
   create_table "healthpoints", force: :cascade do |t|
     t.integer  "healthpoint1"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20161120034105) do
     t.integer  "healthpoint4"
     t.integer  "healthpoint5"
     t.text     "diary_entry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "username"
+    t.date     "date_of_birth"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

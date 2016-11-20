@@ -1,0 +1,14 @@
+      <%= form_for @profile, url: user_profile_path do |f| %>
+        <div class="form-group">
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :date_of_birth %>
+          <%= f.date_field :date_of_birth, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+        </div>
+      <% end %>

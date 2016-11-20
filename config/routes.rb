@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  #devise_for :users, controllers: { registrations: 'users/registrations' }
+  #devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   
   #root 'users#signup'
   #root 'users#index'
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #get 'users/:id' => 'profile#view'
   
   resources :users do
+    resource :profile
     resources :healthpoints
   end
   
