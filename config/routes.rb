@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root 'users#login'
+  root 'users#signup'
+  
+  post "users", to: "users#create"
   
   get 'users/:id' => 'profile#view'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
